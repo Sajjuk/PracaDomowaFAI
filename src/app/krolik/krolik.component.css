@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
+h1, h2, h3, label {
+  text-align: center;
+  font-family: 'Girassol', cursive;
+  color: white;
+  letter-spacing: 10px;
+}
+
+h3, label {
+  letter-spacing: 5px;
+}
+
+button.modyfikacja {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+button.modyfikuj {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 7px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+button.modyfikacja:hover, button.modyfikuj:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  transition: all 0.4s ease 0s;
+}
+
+div.modyfikacja {
+  text-align: center;
+}

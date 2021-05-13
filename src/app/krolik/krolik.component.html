@@ -1,0 +1,48 @@
+<div *ngIf="!trybEdycji">
+  <h1>{{imie}}</h1>
+  <h2>Wiek: {{wiek}}</h2>
+  <h2>Waga: {{waga}}</h2>
+  <h2>Adres właściciela:</h2>
+  <h2>{{adresWlasciciela.ulica}} {{adresWlasciciela.numerDomu}}/{{adresWlasciciela.numerMieszkania}}</h2>
+  <h2>{{adresWlasciciela.kodPocztowy}} {{adresWlasciciela.miasto}}</h2>
+  <h2>Karmy:</h2>
+  <h3 *ngFor="let karma of karmy; let i = index">
+    - {{karma}}
+    <button class="modyfikuj" (click)="usunKarme(karma)">Usuń karmę</button>
+  </h3>
+</div>
+<button (click)="zmienStanModyfikacji()" class="modyfikacja"><div *ngIf="trybEdycji">Wróć do danych</div><div *ngIf="!trybEdycji">Modyfikuj</div></button>
+
+<div *ngIf="trybEdycji" class="modyfikacja">
+  <h1>Zmodyfikuj informacje</h1>
+  <form>
+    <div>
+      <label>Imię: </label>
+      <input type="text" [(ngModel)]="imie" name="imie">
+    </div>
+    <div>
+      <label>Wiek: </label>
+      <input type="text" [(ngModel)]="wiek" name="wiek">
+    </div>
+    <div>
+      <label>Waga: </label>
+      <input type="text" [(ngModel)]="waga" name="waga">
+    </div>
+    <div>
+      <label>Adres właściciela: </label>
+      <input type="text" [(ngModel)]="adresWlasciciela.ulica" name="ulica">
+      <input type="text" [(ngModel)]="adresWlasciciela.numerDomu" name="numerDomu">
+      <input type="text" [(ngModel)]="adresWlasciciela.numerMieszkania" name="numerMieszkania">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="adresWlasciciela.kodPocztowy" name="kodPocztowy">
+      <input type="text" [(ngModel)]="adresWlasciciela.miasto" name="miasto">
+    </div>
+  </form>
+
+  <h1>Dodaj karmę</h1>
+  <form (submit)="dodajKarme(karma.value)">
+      <input type="text" #karma id="taskField">
+  </form>
+  <button (click)="dodajKarme(karma.value)" class="modyfikuj">Dodaj karmę</button>
+</div>
